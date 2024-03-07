@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>Weather App</h1>
+            </div>
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search for a city">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="weather loading">
+                <h2 class="city">Weather in Brooklyn, NY</h2>
+                <div class="main-info">
+                    <div class="temp">36°C</div>
+                    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" class="icon">
+                    <div class="description">Cloudy</div>
+                </div>
+                <div class="details">
+                    <div class="humidity">Humidity: 67%</div>
+                    <div class="wind">Wind: 5 km/h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

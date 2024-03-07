@@ -1,0 +1,128 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 120%;
+    background-image: url('day.jpg'); /* Default to day background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+.weather-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.13);
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: hsl(206deg 100% 50% / 20%);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    color: black;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+}
+
+button:hover {
+    background: rgb(79, 79, 199);
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather.loading {
+    animation: spin 1s linear infinite;
+}
+
+.city {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+}
+
+.temp {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 1em;
+}
+
+.description {
+    font-size: 1.2em;
+}
+
+.humidity {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.wind {
+    font-size: 1.2em;
+}
+
+.feels-like {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.updated {
+    font-size: 1em;
+    color: hsl(206deg 100% 50% / 20%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

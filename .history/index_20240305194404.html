@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar" placeholder="Search">
+            <div class="autocomplete"></div> <!-- Container for autocomplete suggestions -->
+            <button id="geolocation-btn">Use My Location</button> <!-- Button to use geolocation -->
+            <button id="unit-toggle-btn">Toggle Unit</button> <!-- Button to toggle temperature unit -->
+            <button id="u">Toggle Unit</button> <!-- Button to toggle temperature unit -->
+        </div>
+        <div class="weather loading">
+            <h2 class="city">Weather in Delhi</h2>
+            <h1 class="temp">34°C</h1>
+            <div class="flex">
+                <img src="" alt="" class="icon">
+                <div class="description">Broken Clouds</div>
+            </div>
+            <div class="humidity">20%</div>
+            <div class="wind">2.5km/h</div>
+        </div>
+        <div class="forecast loading">
+            <!-- Forecast data will be dynamically added here -->
+        </div>
+    </div>
+</body>
+</html>

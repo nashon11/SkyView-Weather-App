@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .weather-data {
+      background-color: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-data">
+    <h2 class="city-name"></h2>
+    <p class="temperature"></p>
+    <p class="weather-condition"></p>
+    <p class="humidity"></p>
+    <p class="wind-speed"></p>
+  </div>
+  <script>
+    const apiKey = "7cbaf9080584e93d756d1e93ba5c46c8";
+
+    const processWeatherData = (data) => {
+      const weatherCondition = data.weather[0].main;
+      
+      switch (weatherCondition) {
+        case "Clear":
+          // Set the background image or color to a clear sky image or color
+          document.body.style.backgroundColor = "lightblue";
+          break;
+        case "Clouds":
+          // Set the background image or color to a cloudy sky image or color
+          document.body.style.backgroundColor = "lightgray";
+          break;
+        case "Rain":
+          // Set the background image or color to a rainy sky image or color
+          document.body.style.backgroundColor = "lightblue";
+          break;
+        // Add more cases for other weather conditions as needed
+        default:
+          // Set a default background image or color
+          document.body.style.backgroundColor = "white";
+          break;
+      }
+      
+      // Update the DOM with the temperature, humidity, wind speed, and weather condition
+      const cityNameElement = document.querySelector(".city-name");
+      const temperatureElement = document.querySelector(".temperature");
+      const weatherConditionElement = document.querySelector(".weather-condition");
+      const humidityElement = document.querySelector(".humidity");
+      const windSpeedElement = document.querySelector(".wind-speed");
+      
+      cityNameElement.textContent = data.name;
+      temperatureElement.textContent = `${data.main.temp}°C`;
+      weatherConditionElement.textContent = data.weather[0].description;
+      humidityElement.textContent = `Humidity: ${data.main.humidity}%`;
+      windSpeedElement.textContent = `Wind speed: ${data.wind.speed}km/h`;
+    };
+
+    const fetchWeatherData = async (city) => {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+      const data = await response.json();
+      processWeatherData(data);
+    };
+
+    fetchWeatherData("Kitengela");
+  </script>
+</body>
+</html>
